@@ -15,7 +15,7 @@ def clickIn(username,passwd):
     # 切換到頁面
     now_handle = driver.current_window_handle
     driver.switch_to.window(now_handle)
-    sleep(2)
+    sleep(4)
     # 清除輸入框內容、輸入帳號密碼，這邊用json取代
     loginUserName = driver.find_element(By.XPATH,"//*[@data-qa-id='loginUserName']")
     loginPassword = driver.find_element(By.XPATH,"//*[@data-qa-id='loginPassword']")
@@ -36,9 +36,9 @@ def clickIn(username,passwd):
     # 切換到最新的頁面
     driver.switch_to.window(windows[0])
     # 隨機延後時間
-    sleep(random.randint(5, 30))    
+    sleep(random.randint(5, 10))    
 
-    clockButtom = driver.find_element(By.CLASS_NAME,"btn-lg")
+    clockButtom = driver.find_element(By.XPATH,"//*[@class='btn btn-white btn-lg btn-block']")
     clockButtom.click()
     sleep(1)
     # 關閉視窗
